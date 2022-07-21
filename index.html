@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React's documentation</title>
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/b0455e8c8f.js" crossorigin="anonymous"></script>
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <ul>
+                <li><a class="nav-link" href="#Hello_world">Hello world <i class="fa-solid fa-angles-right"></i></a>
+                </li>
+                <li><a class="nav-link" href="#Introducing_JSX">Introducing JSX <i
+                            class="fa-solid fa-angles-right"></i></a></li>
+                <li><a class="nav-link" href="#Rendering_elements">Rendering elements <i
+                            class="fa-solid fa-angles-right"></i></a></li>
+                <li><a class="nav-link" href="#Components_and_props">Components and props <i
+                            class="fa-solid fa-angles-right"></i></a></li>
+                <li><a class="nav-link" href="#State_and_lifecycle">State and lifecycle <i
+                            class="fa-solid fa-angles-right"></i></a></li>
+            </ul>
+        </header>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Hello_world">
+            <header>Hello world</header>
+            <p>The smallest React example looks like this:</p>
+            <code>const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(Hello, world!);</code>
+        </section>
+        <section class="main-section" id="Introducing_JSX">
+            <header>Introducing JSX</header>
+            <p>This funny tag syntax is neither a string nor HTML.
+                It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to
+                describe what the UI should look like. JSX may remind you of a template language, but it comes with the
+                full power of JavaScript.
+                JSX produces React “elements”. We will explore rendering them to the DOM in the next section. Below, you
+                can find the basics of JSX necessary to get you started.
+            </p>
+            <code>const element = Hello, world!;</code>
+            <li>React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are
+                handled, how the state changes over time, and how the data is prepared for display.</li>
+            <li>We split JSX over multiple lines for readability. While it isn’t required, when doing this, we also
+                recommend wrapping it in parentheses to avoid the pitfalls of automatic semicolon insertion.</li>
+        </section>
+        <section class="main-section" id="Rendering_elements">
+            <header>Rendering elements</header>
+            <p>An element describes what you want to see on the screen:</p>
+            <code>const element = Hello, world;</code>
+            <li>One might confuse elements with a more widely known concept of “components”. We will introduce
+                components in the next section. Elements are what components are “made of”, and we encourage you to read
+                this section before jumping ahead.</li>
+        </section>
+        <section class="main-section" id="Components_and_props">
+            <header>Components and props</header>
+            <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and
+                return React elements describing what should appear on the screen.</p>
+            <p>The simplest way to define a component is to write a JavaScript function:</p>
+            <code>function Welcome(props) {...}</code>
+            <p>Previously, we only encountered React elements that represent DOM tags:</p>
+            <code>const element = div;</code>
+            <p class="note"><strong>Note</strong>: Always start component names with a capital letter.
+                React treats components starting with lowercase letters as DOM tags. For example,
+                div represents an HTML div tag, but
+                Welcome represents a component and requires Welcome to be in scope.
+                To learn more about the reasoning behind this convention, please read JSX In Depth.
+            </p>
+        </section>
+        <section class="main-section" id="State_and_lifecycle">
+            <header>State and lifecycle</header>
+            <p>Consider the ticking clock example from one of the previous sections. In Rendering Elements, we have only
+                learned one way to update the UI. We call root.render() to change the rendered output:</p>
+            <code>const root = ReactDOM.createRoot(document.getElementById('root'));...</code>
+            <p class="note"><strong>Note</strong>: In React apps, whether a component is stateful or stateless is
+                considered an implementation detail of the component that may change over time. You can use stateless
+                components inside stateful components, and vice versa.</p>
+            <p>This is commonly called a “top-down” or “unidirectional” data flow. Any state is always owned by some
+                specific component, and any data or UI derived from that state can only affect components “below” them
+                in the tree.
+                If you imagine a component tree as a waterfall of props, each component’s state is like an additional
+                water source that joins it at an arbitrary point but also flows down.
+                To show that all components are truly isolated, we can create an App component that renders three
+                Clock S:
+            </p>
+            <p>Neither parent nor child components can know if a certain component is stateful or stateless, and they
+                shouldn’t care whether it is defined as a function or a class.</p>
+            <li>We also can’t display the BoilingVerdict from Calculator. The Calculator doesn’t know the current
+                temperature because it is hidden inside the TemperatureInput.</li>
+            <li>It returns an empty string on an invalid temperature, and it keeps the output rounded to the third
+                decimal place.</li>
+            <code>function App() { return (...); }</code>
+    </main>
+</body>
+
+</html>
